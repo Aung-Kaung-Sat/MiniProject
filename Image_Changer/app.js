@@ -1,14 +1,14 @@
 const imgArray = [
-    "images/photo_1.jpeg",
-    "images/photo_2.jpeg",
-    "images/photo_3.jpeg",
-    "images/photo_4.jpeg",
-    "images/photo_5.jpeg",
-    "images/photo_6.jpeg",
-    "images/photo_7.jpeg",
-    "images/photo_8.jpeg",
-    "images/photo_9.jpeg",
-    "images/photo_10.jpeg",
+    "images/photo_1.webp",
+    "images/photo_2.webp",
+    "images/photo_3.webp",
+    "images/photo_4.webp",
+    "images/photo_5.webp",
+    "images/photo_6.webp",
+    "images/photo_7.webp",
+    "images/photo_8.webp",
+    "images/photo_9.webp",
+    "images/photo_10.webp",
 ];
 
 const imgTagOne = document.getElementsByClassName("photo_container")[0];   // HTML collection
@@ -31,10 +31,10 @@ const imgChangeInOrder = () => {
 
 const counterIncreasing = () => {
     imgTagOne.src = imgArray[counter];
-    console.log("counter :", counter, "src :", imgTagOne.getAttribute('src'));
+    // console.log("counter :", counter, "src :", imgTagOne.getAttribute('src'));
     counter++;
     let image_source = imgTagOne.getAttribute('src');
-    spanTagOne.innerHTML = image_source.slice(7, image_source.length);
+    spanTagOne.innerHTML = image_source.slice(7, image_source.length - 5);
 }
 buttonTagOne.addEventListener("click", imgChangeInOrder);
 
@@ -47,7 +47,7 @@ const changeImgRandom = () => {
     }
     imgTagTwo.src = imgArray[randomNum];
     let image_source = imgTagTwo.getAttribute('src');
-    spanTagTwo.innerHTML = image_source.slice(7, image_source.length);
-    console.log("random number:", randomNum, "image soucre:", imgTagTwo.getAttribute('src'));
+    spanTagTwo.innerHTML = image_source.slice(7, image_source.length - 5);
+    // console.log("random number:", randomNum, "image soucre:", imgTagTwo.getAttribute('src'));
 }
 buttonTagTwo.addEventListener("click", changeImgRandom)
